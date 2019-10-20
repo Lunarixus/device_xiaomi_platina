@@ -1,5 +1,5 @@
-allow rild default_prop:file { read open getattr };
-allow rild tombstone_data_file:dir { write search add_name };
-allow rild tombstone_data_file:file { create read write open };
+# qcril.so needs access to /vendor/radio/qcril_database/qcril.db
 allow rild vendor_file:file ioctl;
-set_prop(rild, system_radio_prop);
+
+typeattribute rild data_between_core_and_vendor_violators;
+allow rild tombstone_data_file:dir search;
