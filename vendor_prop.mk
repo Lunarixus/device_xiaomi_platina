@@ -272,30 +272,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.sensors.pickup=true
 
-# HAL1 apps list
-PRODUCT_PROPERTY_OVERRIDES += \
-    vendor.camera.hal1.packagelist=org.codeaurora.snapcam
-
-# Enable HAL3
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.vendor.camera.HAL3.enabled=1 \
-    persist.camera.expose.aux=1 \
-    persist.camera.is_type=4 \
-    persist.camera.is_mode=4 \
-    persist.camera.max.previewfps=60 \
-    persist.vendor.camera.eis.enable=1
-
-# Expose aux camera for below packages
-PRODUCT_PROPERTY_OVERRIDES += \
-    vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera,com.qualcomm.qti.qmmi,org.lineageos.snap
-
-# Disable UBWC for camera
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.vendor.camera.preview.ubwc=0 \
-    persist.camera.hist.high=20 \
-    persist.camera.hist.drc=1.2 \
-    persist.camera.stats.test=5
-
 # Set maximum supported adapter voltage
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.chg.max_volt_mv=9000
@@ -394,7 +370,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.labtest_flag=false \
     ro.cit.nonrootbuild=true \
     qemu.hw.mainkeys=0 \
-    vendor.video.disable.ubwc=1 \
     dalvik.vm.heapgrowthlimit=256m \
     dalvik.vm.heapstartsize=8m \
     dalvik.vm.heapsize=512m \
@@ -475,3 +450,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.colorpick_adjust=true \
     ro.df.effect.conflict=1 \
     persist.vendor.df.extcolor.proc=0
+
+#disable UBWC for camera
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.vendor.camera.preview.ubwc=0
